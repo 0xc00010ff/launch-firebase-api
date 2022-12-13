@@ -1,0 +1,42 @@
+{
+  "name": "functions",
+  "scripts": {
+    "format": "prettier --write src/**/*.ts",
+    "lint": "eslint --ext .js,.ts . --fix",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "npm run lint && npm run format && npm run local",
+    "local": "npm run build:watch | GOOGLE_APPLICATION_CREDENTIALS=$INIT_CWD/../serviceAccountKey.json FIRESTORE_EMULATOR_HOST=localhost:4002 firebase emulators:start --only functions,firestore",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^4.1.1",
+    "morgan": "^1.10.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/morgan": "^1.9.3",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^0.2.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}
