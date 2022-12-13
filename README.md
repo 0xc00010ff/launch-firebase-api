@@ -2,6 +2,8 @@
 
 ## Installation
 
+First, create a project on [Firebase](https://console.firebase.google.com/)
+
 ### Install Firebase tools
   
   - https://firebase.google.com/docs/cli#install-cli-mac-linux
