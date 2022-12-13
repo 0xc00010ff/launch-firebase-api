@@ -39,7 +39,7 @@ The dev server runs at https://us-central1-your-app-name.cloudfunctions.net/v1
 
 Note: POST params expect a JSON body
 
-`POST /widgets` - Create an widget.
+`POST /widgets` - Create a widget.
 
 - `name`: (optional) widget name
 - `description`: (optional) widget description
